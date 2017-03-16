@@ -1,0 +1,139 @@
+
+
+
+
+
+
+@import "../../base/fn";
+
+.ssui-dialog {
+    position: fixed;
+    z-index: 5000;
+    width: 80%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: @ssuiDialogBackgroundColor;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.ssui-dialog__hd {
+    padding: 1.3em @ssuiDialogGapWidth .5em;
+}
+.ssui-dialog__title {
+    font-weight: 400;
+    font-size: 18px;
+}
+.ssui-dialog__bd {
+    padding: 0 @ssuiDialogGapWidth .8em;
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: @ssuiTextColorGray;
+    &:first-child{
+        padding:2.7em 20px 1.7em;
+        color:#353535;
+    }
+}
+.ssui-dialog__ft {
+    position: relative;
+    line-height: 48px;
+    font-size: 18px;
+    display: flex;
+    &:after {
+        content: " ";
+        .setTopLine(@ssuiDialogLineColor);
+    }
+}
+.ssui-dialog__btn {
+    display: block;
+    flex: 1;
+    color: @ssuiDialogLinkColor;
+    text-decoration: none;
+    .setTapColor();
+    &:active {
+        background-color: @ssuiDialogLinkActiveBc;
+    }
+
+    position: relative;
+    &:after {
+        content: " ";
+        .setLeftLine(@ssuiDialogLineColor);
+    }
+    &:first-child {
+        &:after {
+            display: none;
+        }
+    }
+}
+.ssui-dialog__btn_default {
+    color: #353535;
+}
+.ssui-dialog__btn_primary {
+    color: #0BB20C;
+}
+
+.ssui-skin_android{
+    .ssui-dialog {
+        text-align: left;
+        box-shadow: 0 6px 30px 0 rgba(0, 0, 0, .1);
+    }
+    .ssui-dialog__title{
+        font-size: 21px;
+    }
+    .ssui-dialog__hd{
+        text-align: left;
+    }
+    .ssui-dialog__bd{
+        color:@ssuiTextColorGray;
+        padding:.25em @ssuiDialogGapWidth 2em;
+        font-size: 17px;
+        text-align: left;
+        &:first-child{
+            padding:1.6em @ssuiDialogGapWidth 2em;
+            color:#353535;
+        }
+    }
+    .ssui-dialog__ft{
+        display: block;
+        text-align: right;
+        line-height: 42px;
+        font-size: 16px;
+        padding:0 @ssuiDialogGapWidth .7em;
+        &:after{
+            display: none;
+        }
+    }
+    .ssui-dialog__btn{
+        display: inline-block;
+        vertical-align: top;
+        padding:0 .8em;
+        &:after{
+            display: none;
+        }
+
+        &:active{
+            background-color: rgba(0,0,0,.06);
+        }
+        &:visited{
+            background-color: rgba(0,0,0,.06);
+        }
+        &:last-child{
+            margin-right: -.8em;
+        }
+    }
+    .ssui-dialog__btn_default {
+        color: #808080;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ssui-dialog {
+        width: 35%;
+    }
+}

@@ -1,0 +1,24 @@
+@import "../../base/fn";
+
+.ssui-progress {
+    display: flex;
+    align-items: center;
+}
+
+.ssui-progress__bar {
+    background-color: @ssuiProgressBg;
+    height: @ssuiProgressHeight;
+    flex: 1;
+}
+
+.ssui-progress__inner-bar {
+    width: 0;
+    height: 100%;
+    background-color: @ssuiProgressColor;
+}
+
+.ssui-progress__opr {
+    display: block;
+    margin-left: 15px;
+    font-size: 0;
+}

@@ -1,0 +1,34 @@
+@import "../../base/fn";
+
+
+.ssui-panel {
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    position: relative;
+    overflow: hidden;
+    &:before {
+        .setTopLine(@ssuiLineColorLight);
+    }
+    &:after {
+        .setBottomLine(@ssuiLineColorLight);
+    }
+}
+
+.ssui-panel__hd {
+    padding: 14px 15px 10px;
+    color: @ssuiTextColorGray;
+    font-size: 13px;
+    position: relative;
+    &:after {
+        .setBottomLine(@ssuiLineColorLight);
+        left: 15px;
+    }
+}
+
+
+
+

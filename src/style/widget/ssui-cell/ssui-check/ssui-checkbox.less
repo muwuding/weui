@@ -1,0 +1,30 @@
+@import "../../../base/fn";
+
+.ssui-cells_checkbox {
+    .ssui-cell__hd {
+        padding-right: @ssuiCellInnerGapH;
+    }
+    .ssui-icon-checked {
+        &:before {
+            content: '\EA01';
+            color: #C9C9C9;
+            font-size: 23px;
+            display: block;
+        }
+    }
+}
+
+// method2 accessbility
+.ssui-check {
+    // checkbox
+    .ssui-cells_checkbox & {
+        &:checked {
+            & + .ssui-icon-checked {
+                &:before {
+                    content: '\EA06';
+                    color: #09BB07;
+                }
+            }
+        }
+    }
+}

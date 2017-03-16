@@ -1,0 +1,45 @@
+@import "../../base/fn";
+@import "../ssui-button/ssui-button";
+
+.ssui-msg {
+    padding-top: @ssuiMsgPaddingTop;
+    text-align: center;
+}
+.ssui-msg__icon-area {
+    margin-bottom: @ssuiMsgIconGap;
+}
+.ssui-msg__text-area {
+    margin-bottom: @ssuiMsgTextGap;
+    padding:0 20px;
+}
+.ssui-msg__text-area a{
+    color:@ssuiLinkColorDefault;
+}
+.ssui-msg__title {
+    margin-bottom: @ssuiMsgTitleGap;
+    font-weight: 400;
+    font-size: 20px;
+}
+.ssui-msg__desc {
+    font-size: 14px;
+    color: @ssuiTextColorGray;
+}
+.ssui-msg__opr-area {
+    margin-bottom: @ssuiMsgOprGap;
+}
+.ssui-msg__extra-area {
+    margin-bottom: @ssuiMsgExtraAreaGap;
+    font-size: 14px;
+    color: @ssuiTextColorGray;
+    a{color: @ssuiLinkColorDefault;}
+}
+
+@media screen and (min-height: @ssuiMsgExtraAreaOfMinHeight) {
+    .ssui-msg__extra-area {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+}

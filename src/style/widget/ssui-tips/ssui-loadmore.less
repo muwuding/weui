@@ -1,0 +1,41 @@
+@import "../../base/fn";
+
+.ssui-loadmore{
+    width: 65%;
+    margin:1.5em auto;
+    line-height: 1.6em;
+    font-size:14px;
+    text-align: center;
+}
+.ssui-loadmore__tips{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ssui-loadmore_line{
+    border-top:1px solid @ssuiLineColorLight;
+    margin-top:2.4em;
+    .ssui-loadmore__tips{
+        position: relative;
+        top:-.9em;
+        padding:0 .55em;
+        background-color: #FFFFFF;
+        color:@ssuiTextColorGray;
+    }
+}
+.ssui-loadmore_dot{
+    .ssui-loadmore__tips{
+        padding:0 .16em;
+        &:before{
+            content: " ";
+            width:4px;
+            height:4px;
+            border-radius:50%;
+            background-color: @ssuiLineColorLight;
+            display: inline-block;
+            position: relative;
+            vertical-align: 0;
+            top:-.16em;
+        }
+    }
+}

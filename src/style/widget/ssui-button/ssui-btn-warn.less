@@ -1,0 +1,12 @@
+@import "../../base/fn";
+
+.ssui-btn-warn {
+    background-color: @ssuiBtnWarnBg;
+    &:not(.ssui-btn-disabled):visited {
+        color: @ssuiBtnFontColor;
+    }
+    &:not(.ssui-btn-disabled):active {
+        color: @ssuiBtnActiveFontColor;
+        background-color: @ssuiBtnWarnActiveBg;
+    }
+}

@@ -1,0 +1,75 @@
+@import "../../../base/fn";
+
+.ssui-label{
+  display:block;
+  width:@ssuiCellLabelWidth;
+  .text_wrap();
+}
+.ssui-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: unit(@ssuiCellLineHeight, em);
+    line-height: @ssuiCellLineHeight;
+
+    // hides the spin-button
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+.ssui-textarea {
+    display: block;
+    border: 0;
+    resize: none;
+    width: 100%;
+    color: inherit;
+    font-size: 1em;
+    line-height: inherit;
+    outline: 0;
+}
+
+.ssui-textarea-counter{
+    color: @ssuiTextColorTips;
+    text-align: right;
+    .ssui-cell_warn &{
+        color: @ssuiTextColorWarn;
+    }
+}
+
+.ssui-toptips {
+    display:none;
+    position: fixed;
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding:5px;
+    font-size:14px;
+    text-align: center;
+    color: #FFF;
+    z-index: 5000;
+    .text_wrap();
+}
+.ssui-toptips_warn {
+    background-color: @ssuiColorWarn;
+}
+.ssui-cells_form {
+    .ssui-cell__ft{
+        font-size:0;
+    }
+    .ssui-icon-warn{
+        display:none;
+    }
+    input, textarea, label[for]{
+        .setTapColor();
+    }
+}
+.ssui-cell_warn{
+    color:@ssuiTextColorWarn;
+    .ssui-icon-warn{display:inline-block;}
+}

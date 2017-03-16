@@ -1,0 +1,34 @@
+@import "../../../base/fn";
+
+.ssui-cell_vcode {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+.ssui-vcode-img{
+    margin-left: 5px;
+    height: @ssuiCellHeight;
+    vertical-align: middle;
+}
+
+.ssui-vcode-btn {
+    display: inline-block;
+    height: @ssuiCellHeight;
+    margin-left: 5px;
+    padding: 0 0.6em 0 0.7em;
+    border-left: 1px solid @ssuiLineColorLight;
+    line-height: @ssuiCellHeight;
+    vertical-align: middle;
+    font-size: @ssuiCellFontSize;
+    color: @ssuiDialogLinkColor;
+    button&{
+        background-color: transparent;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 0;
+        outline: 0;
+    }
+    &:active {
+        color: desaturate(@ssuiDialogLinkColor, 30%);
+    }
+}

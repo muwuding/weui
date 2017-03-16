@@ -1,0 +1,61 @@
+@import "../../base/fn";
+@import "ssui-btn-global";
+@import "ssui-btn-default";
+@import "ssui-btn-primary";
+@import "ssui-btn-warn";
+@import "ssui-btn-disabled";
+@import "ssui-btn-loading";
+@import "ssui-btn-plain";
+
+button, input {
+    &.ssui-btn {
+        width: 100%;
+        border-width: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &.ssui-btn-inline,&.ssui-btn-mini {
+        width: auto;
+    }
+    &.ssui-btn-plain-primary,&.ssui-btn-plain-default{
+        border-width: 1px;
+        background-color: transparent;
+    }
+}
+
+.ssui-btn-mini {
+    display: inline-block;
+    padding: 0 1.32em;
+    line-height: @ssuiBtnMiniHeight;
+    font-size: @ssuiBtnMiniFontSize;
+}
+
+
+/*gap between btn*/
+.ssui-btn + .ssui-btn {
+    margin-top: @ssuiBtnDefaultGap;
+}
+
+.ssui-btn.ssui-btn-inline + .ssui-btn.ssui-btn-inline {
+    margin-top: auto;
+    margin-left: @ssuiBtnDefaultGap;
+}
+
+.ssui-btn-area {
+    margin: @ssuiCellsMarginTop @ssuiBtnDefaultGap .3em; 
+}
+.ssui-btn-area_inline {
+    display: flex;
+    .ssui-btn {
+        margin-top: auto;
+        margin-right: @ssuiBtnDefaultGap;
+        width: 100%;
+        flex: 1;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

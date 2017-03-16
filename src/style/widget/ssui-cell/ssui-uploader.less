@@ -1,0 +1,99 @@
+@import "../../base/fn";
+
+.ssui-uploader{}
+.ssui-uploader__hd{
+    display: flex;
+    padding-bottom: @ssuiCellGapV;
+    align-items: center;
+}
+.ssui-uploader__title{
+    flex: 1;
+}
+.ssui-uploader__info{
+    color: @ssuiTextColorTips;
+}
+
+.ssui-uploader__bd{
+    margin-bottom: @ssuiCellGapH - (@ssuiCellGapV + @ssuiUploaderFileSpacing);
+    margin-right: -@ssuiUploaderFileSpacing;
+    overflow: hidden;
+}
+.ssui-uploader__files{
+    list-style: none;
+}
+.ssui-uploader__file{
+    float: left;
+    margin-right: @ssuiUploaderFileSpacing;
+    margin-bottom: @ssuiUploaderFileSpacing;
+    width: @ssuiUploaderSize;
+    height: @ssuiUploaderSize;
+    background: no-repeat center center;
+    background-size: cover;
+}
+.ssui-uploader__file_status{
+    position: relative;
+    &:before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    .ssui-uploader__file-content{
+        display: block;
+    }
+}
+.ssui-uploader__file-content{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    .ssui-icon-warn{
+        display: inline-block;
+    }
+}
+.ssui-uploader__input-box{
+    float:left;
+    position: relative;
+    margin-right: @ssuiUploaderFileSpacing;
+    margin-bottom: @ssuiUploaderFileSpacing;
+    width: @ssuiUploaderSize - @ssuiUploaderBorderWidth * 2;
+    height: @ssuiUploaderSize - @ssuiUploaderBorderWidth * 2;
+    border: @ssuiUploaderBorderWidth solid @ssuiUploaderBorderColor;
+    &:before, &:after{
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: @ssuiUploaderBorderColor;
+    }
+    &:before{
+        width: @ssuiUploaderBorderWidth + 1;
+        height: @ssuiUploaderSize / 2;
+    }
+    &:after{
+        width: @ssuiUploaderSize / 2;
+        height: @ssuiUploaderBorderWidth + 1;
+    }
+    &:active{
+        border-color: @ssuiUploaderActiveBorderColor;
+        &:before, &:after{
+            background-color: @ssuiUploaderActiveBorderColor;
+        }
+    }
+}
+.ssui-uploader__input{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    .setTapColor();
+}
